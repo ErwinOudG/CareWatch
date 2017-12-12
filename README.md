@@ -8,6 +8,9 @@ Maak een nieuwe database aan en importeer dan: u12893p9221_carew_171211_met _dat
 In bijv. Php MY admin moet je dan een nieuwe user voor privilegen aanmaken en de gegevens invullen in het document: /php/dbhinc/php
 Gebruik een enable cross origin recourse sharing plugin voor Chrome!
 
+Test Gebruiker:
+a.brown@hotmail.com
+wachtwoord: 987654
 
 
 ~ Website Structuur:
