@@ -31,7 +31,7 @@
       <ul class="navbar-nav mr-auto">
         <li class=>
 
-          <a class="nav-link" href="#"><p>Welkom Ms J.Austen</p><span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#"><p>Welkom Ms A. Brown</p><span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"><p></p></a>
@@ -70,7 +70,7 @@
             </tr>
             <tr>
               <td>Zipcode and Country:</td>
-              <td>8900er Cansas</td>
+              <td>NY 10028</td>
             </tr>
             <tr>
               <td>Phonenumber:</td>

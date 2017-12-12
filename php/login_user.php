@@ -41,9 +41,9 @@ if (isset($_POST ['submit']))
 							}
 						else if ($hashedPwdCheck == true)
 							{
-								echo "Ingelogd!";
+								// echo "Ingelogd!";
 								$_SESSION['u_id']=$uid;
-								header("Location:user.php");
+								header("Location: ./user.php");
 								/*Log in the user here
 								$_SESSION['u_id'] = $row['user_id'];
 								$_SESSION['u_first'] = $row['user_first'];

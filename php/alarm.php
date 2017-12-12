@@ -4,11 +4,11 @@
   <title>Care watch</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href='http://weloveiconfonts.com/api/?family=fontawesome' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css">
+  <link href='https://weloveiconfonts.com/api/?family=fontawesome' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css">
   <link rel="stylesheet" type="text/css" href="../css/alarm.css">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 </head>
 
@@ -46,7 +46,7 @@
       </nav>
 
       <a href="../index.php">
-        <center><input type="submit" name="logout_submit" value="Logout" /></center>
+        <center><input type="submit" name="logout_submit" value="Logout" /></center></a>
 
     </header>
   </div>
@@ -135,12 +135,12 @@
     <div class="tooltip">Contacts <br> List
       <span class="tooltiptext"><h3>Contact list</h2>
         <div id="text">
-    <p> 9:00 everyday textreminder medicines<br>
-      9:00 everyday   vibrations reminder medicines<br>
-      17:00 everyday  textreminder medicines<br>
-      17:00 everyday  vibrations reminder medicines<br>
-      25/06/17/14 hours: textreminder physician<br>
-      25/06/17/14 hours: vibrations reminder physician<br>
+          <p> Contact neighbour 1:  Mrs. S.Turner (056-2345-4321)<br>
+            Contact neighbour 2:  Mr. G.Armstrong (088-5676-4378)<br>
+            Family member 1: Mrs. J. Brown (daughter) distance 12 kms (067-4572-4309)<br>
+            Family member 2: Mrs. S.Fletcher (sister) distance 20 kms (069-5387-1273)<br>
+            Physician: Dr. A.Lincoln (054-5456-6732)<br>
+            Hospital: St.Peters Hospital (045-3243-6518)<br>
 </div></span></div>
   </div>
 
@@ -160,9 +160,9 @@
     });
 
     // Set a callback to run when the Google Visualization API is loaded.
-    google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawChartHB);
     // id 5 is heartbeat id 6 is temperatrure  for demo purposes
-    function drawChart() {
+    function drawChartHB() {
       var jsonData = $.ajax({
         url: "https://carew.oudgenoeg.nl/php/chartdata.php?id=5",
         dataType: "json",
@@ -178,7 +178,7 @@
       }
       // Create our data table out of JSON data loaded from server.
       var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Time');
+      data.addColumn('string', '');
       data.addColumn('number', jsonClean.type);
 
       for (var i = last100; i < jsonDataPoints.length; i++) {
@@ -186,8 +186,8 @@
       }
       var options = {
         chart: {
-          title: 'Sensor ' + jsonClean.type + ' data',
-          subtitle: 'if more than 100 then show last 100'
+          // title: 'Sensor ' + jsonClean.type + ' data',
+          // subtitle: 'if more than 100 then show last 100'
         },
         width: 600,
         height: 333,
@@ -230,7 +230,7 @@
       }
       // Create our data table out of JSON data loaded from server.
       var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Time');
+      data.addColumn('string', '');
       data.addColumn('number', jsonClean.type);
 
       for (var i = last100; i < jsonDataPoints.length; i++) {
@@ -238,11 +238,11 @@
       }
       var options = {
         chart: {
-          title: 'Sensor ' + jsonClean.type + ' data',
-          subtitle: 'if more than 100 then show last 100'
+          // title: 'Sensor ' + jsonClean.type + ' data',
+          // subtitle: 'if more than 100 then show last 100'
         },
-        width: 900,
-        height: 500,
+        width: 600,
+        height: 333,
         axes: {
           x: {
             0: {
