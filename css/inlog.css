@@ -273,6 +273,10 @@ float:right;
   text-align: center;
 }
 
+.footerfix {
+  padding-bottom: 80px;
+}
+
 footer {
     width:100%;
     height:80px;
@@ -282,6 +286,6 @@ footer {
     background-color: #31849B;
     clear: left;
     text-align:center;
-    position: relative;
+    position: absolute;
 
 }

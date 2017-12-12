@@ -8,6 +8,8 @@
 </head>
 
 <body>
+<div class="footerfix">
+
 
   <nav class="navbar navbar-expand navbar-light ">
     <a class="navbar-brand" href="#">
@@ -43,13 +45,13 @@
       <input type="text" name="email" placeholder="E-mail" />
       <input type="password" name="password" placeholder="Password" />
       <input type="password" name="pincode" placeholder="Pincode" />
-      <a href="../alarmlandingpage.html">
+      <a href="alarmlandingpage.php">
         <center><input type="submit" name="login_submit" value="Login" /></center>
         <a href="#">
           <!-- <center><input type="submit" name="signup_submit" value="Sign me up" /></center> -->
 
     </div>
-    <!--<img src="/img/Alarm.jpg" alt="" style="width:300px;height:400px;">-->
+    <!-- <img src="/img/alarm.jpg" alt="" style="width:300px;height:400px;"> -->
     <div class="right">
 
       <span class="loginwith">Login<br/>My alarm panel</span>
@@ -58,7 +60,7 @@
 
   </div>
 
-
+</div>
   <footer>
     <i><em>Copyright&copy; CareWatch 2017</em></i>
     <div id="copyright" style="top: 40px; margin-left: -50px; position: relative; text-align:center;"></div>

@@ -54,7 +54,7 @@ class NAW implements JsonSerializable{
 
     $exists = mysqli_num_rows(mysqli_query($conn,"SELECT naw_email FROM naw WHERE naw_email='$email'")) > 0;
     if($exists){
-      echo "Gotten Result!";
+      // echo "Gotten Result!";
       return true;
     }
     $sql = "INSERT INTO naw (naw_voornaam,naw_tussenvoegsel,naw_achternaam,naw_geslacht,

@@ -14,6 +14,9 @@
 </head>
 
 <body>
+	<div class="footerfix">
+
+
 
   <nav class="navbar navbar-expand navbar-light ">
     <a class="navbar-brand" href="#">
@@ -52,30 +55,30 @@
         <?php
           if (isset ($_SESSION['u_id']))
         	 {
-             echo '<form action="/php/logout.inc.php" method="POST">
-        					 <button type="submit" name="submit">Logout</button></form>';
+             echo '<form action="php/logout.inc.php" method="POST">
+        					 <center><button type="submit" name="submit">Logout</button></form></center>';
         	 }
         	else
         	 {
-        		 echo '<form action="/php/login_user.php" method="POST">
+        		 echo '<form action="php/login_user.php" method="POST">
         					 <input type="text" name="email" placeholder="E-Mail">
         					 <input type="password" name="user_password" placeholder="Password">
         					 <center><button type="submit" name="submit">Login</button></center></form>';
         		}
         ?>
-        <a href="/php/registration_user.php"><center><input type="submit" name="signup_submit" value="Sign me up"/></center></a>
+        <a href="php/registration_user.php"><center><input type="submit" name="signup_submit" value="Sign me up"/></a></center>
     </div>
     <div class="right">
     </div>
 
     <div class="or">OR</div>
-    <div><a href="/php/alarm_login_screen.php"><button class="social-signin facebook">Log in My Alarm Panel</button></a></div>
+    <div><a href="php/alarm_login_screen.php"><button class="social-signin facebook">Log in My Alarm Panel</button></a></div>
   </div>
 
 
   <br>
   <br>
-
+	</div>
   <!-- Hier begint footer **********************************************************-->
   <footer>
     <i><em>Copyright&copy; CareWatch 2017</em></i>

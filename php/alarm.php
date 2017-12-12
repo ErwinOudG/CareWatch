@@ -6,27 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href='http://weloveiconfonts.com/api/?family=fontawesome' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css">
-  <link rel="stylesheet" type="text/css" href="css/alarm.css">
+  <link rel="stylesheet" type="text/css" href="../css/alarm.css">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
 </head>
 
 <body>
+  <?php
+    include_once("classes/alarm.php");
+    $alarmId = $_GET['id'];
+    $geta = Alarm::Instance($_GET['id']);
+    $getj = json_encode($geta);
+    $gstate = $geta->state;
+    // $galarmid = $geta->id;
+    if ($gstate === '1') {
+      // $geta->state = 2;
+      $geta->state = '2';
+      $geta->update_db();
+    }
+    if (isset($_GET['setstate'])) {
+      $newstate = $_GET['setstate'];
+      $geta->state = $newstate;
+      $geta->update_db();
+    }
+   ?>
+
 
   <div id="wrapper">
 
     <header>
-      <img src="img/logo.jpg" alt="logo" style="width: 15%; float: left; margin-top: -2%; position: relative; margin-left: -11%;" ;>
+      <img src="../img/logo.jpg" alt="logo" style="width: 15%; float: left; margin-top: -2%; position: relative; margin-left: -11%;" ;>
       <nav class="headernav">
         <ul class="main-nav">
-          <li><a href="alarmlandingpage.html">Alarm List</a></li>
+          <li><a href="alarmlandingpage.php">Alarm List</a></li>
           <li><a href="#">Alarm Details</a>
           </li>
         </ul>
       </nav>
 
-      <a href="index.php">
+      <a href="../index.php">
         <center><input type="submit" name="logout_submit" value="Logout" /></center>
 
     </header>
@@ -45,7 +64,7 @@
       </p>
 
       <h3>Client Photo</h3>
-      <b><img src="img/oma2.jpg" width="100%" height="100%" alt="Client Photo"></b>
+      <b><img src="../img/oma2.jpg" width="100%" height="100%" alt="Client Photo"></b>
 
       <h4>Client information</h4>
       <g><em><big>Name:Mrs. A.Brown</br>
@@ -116,12 +135,12 @@
     <div class="tooltip">Contacts <br> List
       <span class="tooltiptext"><h3>Contact list</h2>
         <div id="text">
-    <p> Contact neighbour 1:  Mrs. S.Turner (056-2345-4321)<br>
-      Contact neighbour 2:  Mr. G.Armstrong (088-5676-4378)<br>
-      Family member 1: Mrs. J. Brown (daughter) distance 12 kms (067-4572-4309)<br>
-      Family member 2: Mrs. S.Fletcher (sister) distance 20 kms (069-5387-1273)<br><br>
-      Physician: Dr. A.Lincoln (054-5456-6732)<br>
-      Hospital: St.Peters Hospital  (045-3243-6518)<br>
+    <p> 9:00 everyday textreminder medicines<br>
+      9:00 everyday   vibrations reminder medicines<br>
+      17:00 everyday  textreminder medicines<br>
+      17:00 everyday  vibrations reminder medicines<br>
+      25/06/17/14 hours: textreminder physician<br>
+      25/06/17/14 hours: vibrations reminder physician<br>
 </div></span></div>
   </div>
 
@@ -130,6 +149,8 @@
     <button class="btn info">LISTEN</button>
     <button class="btn warning">MESSAGE</button>
     <button class="btn danger">VIBRATION</button>
+    <button class="btn progress" onclick="location.href='alarm.php?id=<?php echo $alarmId;?>&setstate=3';">In Progress</button>
+    <button class="btn solved"   onclick="location.href='alarm.php?id=<?php echo $alarmId;?>&setstate=4';">Solved</button>
   </div>
 </div>
   <script>
@@ -220,8 +241,8 @@
           title: 'Sensor ' + jsonClean.type + ' data',
           subtitle: 'if more than 100 then show last 100'
         },
-        width: 600,
-        height: 333,
+        width: 900,
+        height: 500,
         axes: {
           x: {
             0: {

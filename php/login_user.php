@@ -1,14 +1,11 @@
 <?php
-
 include 'dbhinc.php';
 session_start();
-
 if (isset($_POST ['submit']))
 {
 	$uid = mysqli_real_escape_string($conn, $_POST['email']);
 	$pwd = mysqli_real_escape_string($conn, $_POST['user_password']);
 	$check = password_hash($pwd, PASSWORD_DEFAULT);
-
 /*	//Controleerd of velden leeg zijn, zo ja ga terug naar login scherm*/
 	if (empty($uid) || empty($pwd))
 		{
@@ -22,37 +19,31 @@ if (isset($_POST ['submit']))
 			$resultcheck = mysqli_num_rows($result);//Controleerd of gebruiker bestaat
 			$row = mysqli_fetch_assoc($result);//Zet gevonden rij in variabele $row
 			$hash = $row['naw_wachtwoord'];//Zet gehashed wachtwoord van gevonden gebruiker uit DB in variabele $hash
-
-
 /* ----------------Indien er geen gebruiker is gevonden------------------ */
 		if ($resultcheck == 0)
 			{
 				echo "Gebruiker zit er niet in";
 				exit();
 				header("Location: ../index.php?login=error");
-
 			}
 		else
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 			{
-
 				if ($row = $result)
-
 					{
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 						//De-hashing the password
 						$hashedPwdCheck = password_verify($pwd, $hash);
-
 						if ($hashedPwdCheck == false)
 							{
 								header("Location: ../index.php?login=error");
 								exit();
 							}
 						else if ($hashedPwdCheck == true)
-
 							{
 								echo "Ingelogd!";
-								exit();
+								$_SESSION['u_id']=$uid;
+								header("Location:user.php");
 								/*Log in the user here
 								$_SESSION['u_id'] = $row['user_id'];
 								$_SESSION['u_first'] = $row['user_first'];
@@ -70,6 +61,5 @@ if (isset($_POST ['submit']))
 else
 {
 	header("Location: ../index.php?login=error");
-
 }
 ?>

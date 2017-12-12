@@ -10,19 +10,19 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/user.css">
-  <!-- <?php
-    include 'php/dbhinc.php';
-    include_once("php/classes/naw.php");
+  <link rel="stylesheet" href="../css/user.css">
+  <?php
+    include 'dbhinc.php';
+    include_once("classes/naw.php");
     $naw = NAW::Instance('naw_id');
     $naw123 = NAW::Create($_POST);
-  ?> -->
+  ?>
 </head>
 <!-- ****************************Main ************************************** -->
 <body>
   <nav class="navbar navbar-expand-lg navbar-light ">
     <a class="navbar-brand" href="#">
-  <img src="img/logo.jpg" width="140" height="50" alt="">
+  <img src="../img/logo.jpg" width="140" height="50" alt="">
 </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -37,19 +37,19 @@
           <a class="nav-link" href="#"><p></p></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="medicalreminder.html"><p>Medical</p></a>
+          <a class="nav-link" href="../medicalreminder.html"><p>Medical</p></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="schedule.html"><p>Reminder</p></a>
+          <a class="nav-link" href="../schedule.html"><p>Reminder</p></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="sensor.html"><p>Sensorpage</p></a>
+          <a class="nav-link" href="../sensor.html"><p>Sensorpage</p></a>
         </li>
 
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <button type="reset" onclick="location.href='index.html'" class="btn btn-outline-light my-2 my-sm-0" type="submit">Logout</button>
-      </form>
+ <button type="reset" onclick="location.href='../index.php'" class="btn btn-outline-light my-2 my-sm-0" type="submit">Logout</button>
+</form>
     </div>
   </nav>
   <div class="container">
@@ -58,16 +58,15 @@
           <div class="card" style="widtd: 20rem;">
 <table style="width:100%">
             <tr>
-
               <td>Name: </td>
-              <td><?php echo $naw->get_full_name();?></td>
+              <td>Mrs. A. Brown</td>
             </tr><tr>
 
               <td>Location:</td>
               <td>Home</td>
             </tr><tr>
               <td>Address:</td>
-              <td><?php echo "";?></td>
+              <td>5th Avenue, 5645</td>
             </tr>
             <tr>
               <td>Zipcode and Country:</td>
@@ -98,13 +97,13 @@
 
 <div class="card" style="widtd: 20rem;">
 <p class="card-text">Example Heartbeat Sensor</p>
-  <img class="card-img-top" src="img/bpm.jpeg" alt="Card image cap"style="height:255px;width:400px;">
+  <img class="card-img-top" src="../img/bpm.jpeg" alt="Card image cap"style="height:255px;width:400px;">
   <div class="card-body"></div>
 </div>
       </div>
       <div class="col cwcontent">
     <p class="card-text">Example Temperature Sensor Graphic</p>
-<img src="img/temperatuurcurve.jpg" class="img-fluid" alt="Responsive image"style="height:255px;width:400px;">
+<img src="../img/temperatuurcurve.jpg" class="img-fluid" alt="Responsive image"style="height:255px;width:400px;">
       </div>
     </div>
 

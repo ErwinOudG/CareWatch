@@ -15,7 +15,7 @@ function get_data(url, cb) {
 
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      console.log(this.responseText);
+      // console.log(this.responseText);
       var responseJSON = JSON.parse(this.responseText);
       cb(responseJSON);
     }
@@ -26,7 +26,7 @@ function get_data(url, cb) {
 
 //Main function to add another alarom element on the alarmlandingpage.html
 function handle_data(data) {
-  console.log(data);
+  // console.log(data);
 
   //Sort the data on alarm state and time
   data.sort(function(stateA, stateB) {
@@ -61,7 +61,7 @@ function handle_data(data) {
       //Makes the alarms a clickable link
       var newAlarmLink = document.createElement("a");
 
-      newAlarmLink.href = "alarm.html" + "?id=" + data[i].alarmid;
+      newAlarmLink.href = "alarm.php" + "?id=" + data[i].alarmid;
       newAlarmLink.style = "display:block; text-decoration:none;";
 
       //Makes new alarm div container

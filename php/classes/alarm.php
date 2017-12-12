@@ -56,11 +56,11 @@ class Alarm implements JsonSerializable{
     global $conn;
     var_dump($this->state);
     var_dump($this->id);
-    $sql = "UPDATE 'snra' SET 'state' = '$this->state' WHERE 'snra'.'id' = $this->id;";
-    echo $sql;
+    $sql = "UPDATE `snra` SET `state` = '$this->state' WHERE `snra`.`id` = '$this->id';";
+    // echo $sql;
     // $sql = "UPDATE  snra (state) VALUES ($this->state) WHERE id == $this->id;";
     if (mysqli_query($conn, $sql)) {
-    echo "Record Updated";
+    // echo "Record Updated";
     }
   }
 

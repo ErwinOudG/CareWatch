@@ -1,6 +1,14 @@
 **** CareWatch ****
 
+~ Vereisten:
 ~ Om deze demo omgeving te gebruiken is een PHP server nodig.
+~ Chrome browser
+Voor het instelllen van de DEMO moet je dit project draaien op een webserver.
+Maak een nieuwe database aan en importeer dan: u12893p9221_carew_171211_met _data.sql.
+In bijv. Php MY admin moet je dan een nieuwe user voor privilegen aanmaken en de gegevens invullen in het document: /php/dbhinc/php
+Gebruik een enable cross origin recourse sharing plugin voor Chrome!
+
+
 
 ~ Website Structuur:
   index.php                     = inlog.css

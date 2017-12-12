@@ -52,7 +52,7 @@
       </nav>
 
       <a>Client Location</a>
-      <p> <a href="https://media.giphy.com/media/3o7TKV5ar6tbpkWoRW/giphy.gif"><img src="img/map.jpg" width="230" height="180" alt="Client Lokatie"></a></p>
+      <p> <a href="https://media.giphy.com/media/3o7TKV5ar6tbpkWoRW/giphy.gif"><img src="../img/map.jpg" width="230" height="180" alt="Client Lokatie"></a></p>
 
       <h3>Client Photo</h3>
       <b><img src="img/oma2.jpg" width="230" height="180" alt="Client Photo"></b>
